@@ -1,10 +1,11 @@
 from django.db import models
-
-# Create your models here.
+from django.utils.translation import gettext as _
 
 
 class Label(models.Model):
-    name = models.CharField(max_length=200, unique=True)
+    name = models.CharField(
+        max_length=200, unique=True, verbose_name=_('Name'))
+
     created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
