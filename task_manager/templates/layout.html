@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="ru-ru">
 
+
+{% load django_bootstrap5 %}
 {% load i18n %}
 
 <head>
@@ -56,6 +58,7 @@
     <div class="container wrapper flex-grow-1">
         {% get_current_language as LANGUAGE_CODE %}
         <p> Current language: {{ LANGUAGE_CODE }}</p>
+        {% bootstrap_messages %}
         <h1 class="my-4">{% block title %}{% endblock %}</h1>
         {% block content %}{% endblock %}
     </div>
