@@ -1,14 +1,19 @@
-l10n:
-	django-admin makemessages -l ru -e html,txt,py
-	django-admin compilemessages
-
-setup: l10n
+init:
 	poetry install
-	./manage.py migrate
+
+l10n:
+	poetry run manage.py makemessages -l ru -e html,txt,py
+	poetry run manage.py compilemessages
+
+db:
+	poetry run manage.py migrate
+
+setup: init l10n db
 
 PORT ?= 8000
-start: setup
-    poetry run gunicorn -w 5 -b 0.0.0.0:$(PORT) task_manager/wsgi.py
+start:
+    # poetry run gunicorn -w 5 -b 0.0.0.0:$(PORT) task_manager/wsgi.py
+	poetry run manage.py runserver 0.0.0.0:8000
 
 lint:
 	poetry run flake8 .
