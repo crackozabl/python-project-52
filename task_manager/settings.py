@@ -44,6 +44,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'task_manager',
     'task_manager.users.apps.UsersConfig',
+    'task_manager.labels.apps.LabelsConfig',
+    'task_manager.statuses.apps.StatusesConfig',
+    'task_manager.tasks.apps.TasksConfig'
 ]
 
 
@@ -108,6 +111,9 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 AUTH_USER_MODEL = 'users.User'
+
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/'
 
 # Internationalization
 # https://docs.djangoproject.com/en/4.2/topics/i18n/

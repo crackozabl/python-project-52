@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+
+{% load i18n %}
+{% block title %}
+
+{% translate "Task manager" %} {% translate "Hexlet" %}
+{% endblock %}
+
+{% block content %}
+    <h1 class="my-4">{% translate "Создать задачу" %}</h1>
+    <form action="/tasks/create/" method="post">
+        {% csrf_token %}
+        <table>
+            {{ form }}
+        </table>
+        <input type="submit" value="{% translate 'Создать' %}">
+    </form>
+{% endblock %}

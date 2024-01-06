@@ -1,0 +1,54 @@
+{% extends "layout.html" %}
+
+{% load i18n %}
+{% block title %}
+
+{% translate "Task manager" %} {% translate "Hexlet" %}
+{% endblock %}
+
+{% block content %}
+<h1 class="my-4">{% translate "Просмотр задачи" %}</h1>
+
+<div class="card">
+    <div class="card-header bg-secondary text-white">
+        <h2>{{ object.id }}</h2>
+    </div>
+    <div class="card-body bg-light">
+        <p>{{ object.id }}</p>
+        <hr>
+        <div class="container">
+            <div class="row p-1">
+                <div class="col">Автор</div>
+                <div class="col">{{ object.author }}</div>
+            </div>
+            <div class="row p-1">
+                <div class="col">Исполнитель</div>
+                <div class="col">{{ object.assignee }}</div>
+            </div>
+            <div class="row p-1">
+                <div class="col">Статус</div>
+                <div class="col">{{ object.status }}</div>
+            </div>
+            <div class="row p-1">
+                <div class="col">Дата создания</div>
+                <div class="col">{{ object.created_at }}</div>
+            </div>
+            <div class="row p-1">
+                <div class="col">
+                    <h6>Метки:</h6>
+                    {% for label in object.labels.all %}
+                    <span class="badge badge-secondary">{{ label.name }}</span>
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="row p-1">
+                <div class="col">
+                    <a href="/tasks/{{ object.id }}/update/">Изменить</a>
+                    <br>
+                    <a href="/tasks/{{ object.id }}/delete/">Удалить</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
