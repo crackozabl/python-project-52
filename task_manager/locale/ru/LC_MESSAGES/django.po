@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-06 22:54+0300\n"
+"POT-Creation-Date: 2024-01-06 23:15+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -30,8 +30,8 @@ msgstr "Да, удалить"
 
 #: task_manager/templates/index.html.py:4
 #: task_manager/templates/labels/create.html.py:6
-#: task_manager/templates/layout.html.py:8
-#: task_manager/templates/layout.html.py:17
+#: task_manager/templates/layout.html.py:10
+#: task_manager/templates/layout.html.py:19
 #: task_manager/templates/login.html.py:6
 #: task_manager/templates/statuses/create.html.py:6
 msgid "Task manager"
@@ -60,7 +60,7 @@ msgid "Delete label"
 msgstr "Удалить метку"
 
 #: task_manager/templates/labels/list.html.py:4
-#: task_manager/templates/layout.html.py:31
+#: task_manager/templates/layout.html.py:33
 #: task_manager/templates/tasks/details.html.py:36
 msgid "Labels"
 msgstr "Метки"
@@ -110,27 +110,27 @@ msgstr "Удалить"
 msgid "Update label"
 msgstr "Изменить метку"
 
-#: task_manager/templates/layout.html.py:24
+#: task_manager/templates/layout.html.py:26
 #: task_manager/templates/users/list.html.py:4
 msgid "Users"
 msgstr "Пользователи"
 
-#: task_manager/templates/layout.html.py:28
+#: task_manager/templates/layout.html.py:30
 #: task_manager/templates/statuses/list.html.py:4
 msgid "Statuses"
 msgstr "Статусы"
 
-#: task_manager/templates/layout.html.py:34
+#: task_manager/templates/layout.html.py:36
 #: task_manager/templates/tasks/list.html.py:4
 msgid "Tasks"
 msgstr "Задачи"
 
-#: task_manager/templates/layout.html.py:46
+#: task_manager/templates/layout.html.py:48
 #: task_manager/templates/login.html.py:10
 msgid "Login"
 msgstr "Вход"
 
-#: task_manager/templates/layout.html.py:49
+#: task_manager/templates/layout.html.py:51
 #: task_manager/templates/users/create.html.py:18
 msgid "Register"
 msgstr "Регистрация"
