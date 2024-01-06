@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-06 21:46+0300\n"
+"POT-Creation-Date: 2024-01-06 22:45+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -32,14 +32,14 @@ msgstr "Да, удалить"
 #: task_manager/templates/labels/create.html.py:6
 #: task_manager/templates/layout.html.py:8
 #: task_manager/templates/layout.html.py:17
-#: task_manager/templates/login.html.py:4
+#: task_manager/templates/login.html.py:6
 #: task_manager/templates/statuses/create.html.py:6
 msgid "Task manager"
 msgstr "Менеджер задач"
 
 #: task_manager/templates/index.html.py:4
 #: task_manager/templates/labels/create.html.py:6
-#: task_manager/templates/login.html.py:4
+#: task_manager/templates/login.html.py:6
 #: task_manager/templates/statuses/create.html.py:6
 msgid "Hexlet"
 msgstr "Hexlet"
@@ -126,15 +126,18 @@ msgid "Tasks"
 msgstr "Задачи"
 
 #: task_manager/templates/layout.html.py:46
-#: task_manager/templates/login.html.py:8
-#: task_manager/templates/login.html.py:14
+#: task_manager/templates/login.html.py:10
 msgid "Login"
 msgstr "Вход"
 
 #: task_manager/templates/layout.html.py:49
-#: task_manager/templates/users/create.html.py:14
+#: task_manager/templates/users/create.html.py:18
 msgid "Register"
 msgstr "Регистрация"
+
+#: task_manager/templates/login.html.py:14
+msgid "Sign in"
+msgstr "Войти"
 
 #: task_manager/templates/statuses/create.html.py:10
 #: task_manager/templates/statuses/list.html.py:7
@@ -184,7 +187,7 @@ msgstr "Исполнитель"
 msgid "Update task"
 msgstr "Изменить задачу"
 
-#: task_manager/templates/users/create.html.py:5
+#: task_manager/templates/users/create.html.py:7
 msgid "Create user"
 msgstr "Создать пользователя"
 
