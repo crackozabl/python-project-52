@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-06 23:21+0300\n"
+"POT-Creation-Date: 2024-01-06 23:31+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -211,6 +211,10 @@ msgstr "Полное имя"
 msgid "Update user"
 msgstr "Изменить пользователя"
 
-#: task_manager/views.py:18
+#: task_manager/views.py:19
 msgid "You are logged in."
 msgstr "Вы залогинены"
+
+#: task_manager/views.py:26
+msgid "You are logged out."
+msgstr "Вы разлогинены"

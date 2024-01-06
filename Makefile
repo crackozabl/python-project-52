@@ -2,8 +2,8 @@ init:
 	poetry install
 
 l10n:
-	poetry run manage.py makemessages -l ru -e html,txt,py
-	poetry run manage.py compilemessages
+	./manage.py makemessages -l ru -e html,txt,py
+	./manage.py compilemessages
 
 db:
 	poetry run manage.py migrate
