@@ -7,12 +7,12 @@
 {% endblock %}
 
 {% block content %}
-    <h1 class="my-4">{% translate "Создать статус" %}</h1>
-    <form action="/statuses/create/" method="post">
+    <h1 class="my-4">{% translate "Create status" %}</h1>
+    <form method="post">
         {% csrf_token %}
         <table>
             {{ form }}
         </table>
-        <input type="submit" value="{% translate 'Создать' %}">
+        <input type="submit" value="{% translate 'Create' %}">
     </form>
 {% endblock %}

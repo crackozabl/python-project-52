@@ -1,13 +1,6 @@
-{% extends "layout.html" %}
+{% extends "common/delete.html" %}
 {% load i18n %}
 
-{% block title %}{% translate "Statuses" %}{% endblock %}
-
-{% block content %}
-<h1 class="my-4">{% translate "Удаление статуса" %}</h1>
-<p>Вы уверены, что хотите удалить {{ object }}?</p>
-<form method="post">
-    {% csrf_token %}
-    <input class="btn btn-danger" type="submit" value="Да, удалить">
-</form>
+{% block title %}
+{% translate "Delete status" %}
 {% endblock %}

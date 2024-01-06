@@ -1,5 +1,7 @@
 from django.views.generic import ListView, CreateView, UpdateView, DeleteView
 from task_manager.labels.models import Label
+from django.utils.translation import gettext as _
+
 
 # Create your views here.
 

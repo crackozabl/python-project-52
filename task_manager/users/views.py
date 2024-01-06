@@ -1,9 +1,15 @@
 from django.urls import reverse_lazy
 from django.contrib.auth import get_user_model
-# from task_manager.users.models import User
+from django.contrib.auth.forms import UserCreationForm
 from django.views.generic import \
     ListView, CreateView, DeleteView, UpdateView
-# from django.views.generic.edit import DeleteView
+# from django.utils.translation import gettext as _
+
+
+class UserRegistrationForm(UserCreationForm):
+    class Meta:
+        model = get_user_model()
+        fields = ('first_name', 'last_name', 'username', 'password1', 'password2')
 
 
 class UserListView(ListView):
@@ -14,7 +20,8 @@ class UserListView(ListView):
 class UserCreateView(CreateView):
     model = get_user_model()
     template_name = 'users/create.html'
-    fields = ('username', 'first_name', 'last_name', 'password')
+    form_class = UserRegistrationForm
+    # fields = ('username', 'first_name', 'last_name', 'password1', 'password2')
     success_url = reverse_lazy('login')
 
 

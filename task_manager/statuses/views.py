@@ -1,5 +1,6 @@
 from django.views.generic import ListView, CreateView, UpdateView, DeleteView
 from task_manager.statuses.models import Status
+from django.utils.translation import gettext as _
 
 # Create your views here.
 
