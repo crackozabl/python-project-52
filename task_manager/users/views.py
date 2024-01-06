@@ -3,7 +3,8 @@ from django.contrib.auth import get_user_model
 from django.views.generic import \
     ListView, CreateView, DeleteView, UpdateView
 from task_manager.users.forms import UserRegistrationForm
-# from django.utils.translation import gettext as _
+from django.contrib.messages.views import SuccessMessageMixin
+from django.utils.translation import gettext as _
 
 
 class UserListView(ListView):
@@ -11,12 +12,14 @@ class UserListView(ListView):
     template_name = 'users/list.html'
 
 
-class UserCreateView(CreateView):
+class UserCreateView(SuccessMessageMixin, CreateView):
     model = get_user_model()
     template_name = 'users/create.html'
     form_class = UserRegistrationForm
     # fields = ('username', 'first_name', 'last_name', 'password1', 'password2')
     success_url = reverse_lazy('login')
+    success_message = _('User registred successfully')
+    # Пользователь успешно зарегистрирован
 
 
 class UserUpdateView(UpdateView):
