@@ -2,12 +2,10 @@
 
 {% load i18n %}
 {% block title %}
-
-{% translate "Task manager" %} {% translate "Hexlet" %}
+<h1 class="my-4">{% translate "View task" %}</h1>
 {% endblock %}
 
 {% block content %}
-<h1 class="my-4">{% translate "Просмотр задачи" %}</h1>
 
 <div class="card">
     <div class="card-header bg-secondary text-white">
@@ -18,24 +16,24 @@
         <hr>
         <div class="container">
             <div class="row p-1">
-                <div class="col">Автор</div>
+                <div class="col">{% translate "Author" %}</div>
                 <div class="col">{{ object.author }}</div>
             </div>
             <div class="row p-1">
-                <div class="col">Исполнитель</div>
+                <div class="col">{% translate "Assignee" %}</div>
                 <div class="col">{{ object.assignee }}</div>
             </div>
             <div class="row p-1">
-                <div class="col">Статус</div>
+                <div class="col">{% translate "Status" %}</div>
                 <div class="col">{{ object.status }}</div>
             </div>
             <div class="row p-1">
-                <div class="col">Дата создания</div>
+                <div class="col">{% translate "Created at" %}</div>
                 <div class="col">{{ object.created_at }}</div>
             </div>
             <div class="row p-1">
                 <div class="col">
-                    <h6>Метки:</h6>
+                    <h6>{% translate "Labels" %}:</h6>
                     {% for label in object.labels.all %}
                     <span class="badge badge-secondary">{{ label.name }}</span>
                     {% endfor %}
@@ -43,9 +41,9 @@
             </div>
             <div class="row p-1">
                 <div class="col">
-                    <a href="/tasks/{{ object.id }}/update/">Изменить</a>
+                    <a href="/tasks/{{ object.id }}/update/">{% translate "Update" %}</a>
                     <br>
-                    <a href="/tasks/{{ object.id }}/delete/">Удалить</a>
+                    <a href="/tasks/{{ object.id }}/delete/">{% translate "Delete" %}</a>
                 </div>
             </div>
         </div>

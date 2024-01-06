@@ -25,13 +25,13 @@
                 </li>
                 {% if request.user.is_authenticated %}
                 <li class="nav-item">
-                    <a class="nav-link" href="/statuses/">{% translate "Статусы" %}</a>
+                    <a class="nav-link" href="/statuses/">{% translate "Statuses" %}</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/labels/">{% translate "Метки" %}</a>
+                    <a class="nav-link" href="/labels/">{% translate "Labels" %}</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/tasks/">{% translate "Задачи" %}</a>
+                    <a class="nav-link" href="/tasks/">{% translate "Tasks" %}</a>
                 </li>
                 {% endif %}
             </ul>
@@ -39,8 +39,8 @@
                 {% if request.user.is_authenticated %}
                 <form action="/logout/" method="post">
                     {% csrf_token %}
-                    <input class="btn nav-link" type="submit" value="Выход">
-                  </form>
+                    <input class="btn nav-link" type="submit" value="Logout">
+                </form>
                 {% else %}
                 <li class="nav-item">
                     <a class="nav-link" href="/login/">{% translate "Login" %}</a>
@@ -54,6 +54,8 @@
         </div>
     </nav>
     <div class="container wrapper flex-grow-1">
+        {% get_current_language as LANGUAGE_CODE %}
+        <p> Current language: {{ LANGUAGE_CODE }}</p>
         <h1 class="my-4">{% block title %}{% endblock %}</h1>
         {% block content %}{% endblock %}
     </div>

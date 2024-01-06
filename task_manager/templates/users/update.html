@@ -1,15 +1,16 @@
 {% extends "layout.html" %}
 {% load i18n %}
 
-{% block title %}{% translate "Users" %}{% endblock %}
+{% block title %}
+<h1 class="my-4">{% translate "Update user" %}</h1>
+{% endblock %}
 
 {% block content %}
-<h1 class="my-4">{% translate "Изменение пользователя" %}</h1>
 <form method="post">
     {% csrf_token %}
     <table>
         {{ form }}
     </table>
-    <input class="btn btn-primary" type="submit" value="Изменить">
+    <input class="btn btn-primary" type="submit" value="{% translate 'Update' %}">
 </form>
 {% endblock %}

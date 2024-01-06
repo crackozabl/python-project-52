@@ -2,17 +2,15 @@
 
 {% load i18n %}
 {% block title %}
-
-{% translate "Task manager" %} {% translate "Hexlet" %}
+    <h1 class="my-4">{% translate "Update status" %}</h1>
 {% endblock %}
 
 {% block content %}
-    <h1 class="my-4">{% translate "Изменение статуса" %}</h1>
     <form method="post">
         {% csrf_token %}
         <table>
             {{ form }}
         </table>
-        <input type="submit" value="{% translate 'Изменить' %}">
+        <input type="submit" value="{% translate 'Update' %}">
     </form>
 {% endblock %}
