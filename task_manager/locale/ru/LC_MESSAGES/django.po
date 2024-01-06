@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-07 02:15+0300\n"
+"POT-Creation-Date: 2024-01-07 02:31+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -27,15 +27,15 @@ msgstr ""
 msgid "Name"
 msgstr "Имя"
 
-#: task_manager/labels/views.py:20
+#: task_manager/labels/views.py:17
 msgid "Label created successfully"
 msgstr "Метка успешно создана"
 
-#: task_manager/labels/views.py:28
+#: task_manager/labels/views.py:25
 msgid "Label updated successfully"
 msgstr "Метка успешно изменена"
 
-#: task_manager/labels/views.py:35
+#: task_manager/labels/views.py:32
 msgid "Label deleted successfully"
 msgstr "Метка успешно удалена"
 
@@ -72,7 +72,7 @@ msgid "Yes, delete"
 msgstr "Да, удалить"
 
 #: task_manager/templates/index.html.py:4
-#: task_manager/templates/labels/create.html.py:6
+#: task_manager/templates/labels/create.html.py:7
 #: task_manager/templates/layout.html.py:10
 #: task_manager/templates/layout.html.py:19
 #: task_manager/templates/login.html.py:6
@@ -80,17 +80,17 @@ msgid "Task manager"
 msgstr "Менеджер задач"
 
 #: task_manager/templates/index.html.py:4
-#: task_manager/templates/labels/create.html.py:6
+#: task_manager/templates/labels/create.html.py:7
 #: task_manager/templates/login.html.py:6
 msgid "Hexlet"
 msgstr "Hexlet"
 
-#: task_manager/templates/labels/create.html.py:10
+#: task_manager/templates/labels/create.html.py:11
 #: task_manager/templates/labels/list.html.py:7
 msgid "Create label"
 msgstr "Создать метку"
 
-#: task_manager/templates/labels/create.html.py:16
+#: task_manager/templates/labels/create.html.py:15
 #: task_manager/templates/statuses/create.html.py:14
 #: task_manager/templates/tasks/create.html.py:14
 msgid "Create"
@@ -122,14 +122,14 @@ msgid "Created at"
 msgstr "Дата создания"
 
 #: task_manager/templates/labels/list.html.py:24
-#: task_manager/templates/labels/update.html.py:14
+#: task_manager/templates/labels/update.html.py:13
 #: task_manager/templates/statuses/list.html.py:24
 #: task_manager/templates/statuses/update.html.py:13
 #: task_manager/templates/tasks/details.html.py:44
 #: task_manager/templates/tasks/list.html.py:31
 #: task_manager/templates/tasks/update.html.py:14
 #: task_manager/templates/users/list.html.py:26
-#: task_manager/templates/users/update.html.py:14
+#: task_manager/templates/users/update.html.py:13
 msgid "Update"
 msgstr "Изменить"
 
@@ -141,7 +141,7 @@ msgstr "Изменить"
 msgid "Delete"
 msgstr "Удалить"
 
-#: task_manager/templates/labels/update.html.py:5
+#: task_manager/templates/labels/update.html.py:6
 msgid "Update label"
 msgstr "Изменить метку"
 
@@ -245,7 +245,7 @@ msgstr "Имя пользователя"
 msgid "Full name"
 msgstr "Полное имя"
 
-#: task_manager/templates/users/update.html.py:5
+#: task_manager/templates/users/update.html.py:6
 msgid "Update user"
 msgstr "Изменить пользователя"
 

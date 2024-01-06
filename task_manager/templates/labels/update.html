@@ -1,5 +1,6 @@
 {% extends "layout.html" %}
 
+{% load django_bootstrap5 %}
 {% load i18n %}
 {% block title %}
     <h1 class="my-4">{% translate "Update label" %}</h1>
@@ -8,9 +9,7 @@
 {% block content %}
     <form method="post">
         {% csrf_token %}
-        <table>
-            {{ form }}
-        </table>
+        {% bootstrap_form form %}
         <input type="submit" value="{% translate 'Update' %}">
     </form>
 {% endblock %}
