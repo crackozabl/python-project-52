@@ -9,3 +9,6 @@ setup: l10n
 PORT ?= 8000
 start: setup
     poetry run gunicorn -w 5 -b 0.0.0.0:$(PORT) task_manager/wsgi.py
+
+lint:
+	poetry run flake8 .
