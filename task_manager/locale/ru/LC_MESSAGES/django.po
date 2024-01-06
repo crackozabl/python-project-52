@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-06 23:41+0300\n"
+"POT-Creation-Date: 2024-01-06 23:44+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -135,9 +135,8 @@ msgid "Login"
 msgstr "Вход"
 
 #: task_manager/templates/layout.html.py:51
-#: task_manager/templates/users/create.html.py:18
-msgid "Register"
-msgstr "Зарегистрировать"
+msgid "Sign up"
+msgstr "Регистрация"
 
 #: task_manager/templates/login.html.py:14
 msgid "Sign in"
@@ -194,6 +193,10 @@ msgstr "Изменить задачу"
 #: task_manager/templates/users/create.html.py:7
 msgid "Create user"
 msgstr "Создать пользователя"
+
+#: task_manager/templates/users/create.html.py:18
+msgid "Register"
+msgstr "Зарегистрировать"
 
 #: task_manager/templates/users/delete.html.py:5
 msgid "Delete user"
