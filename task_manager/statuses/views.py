@@ -40,5 +40,4 @@ class StatusDeleteView(SuccessMessageMixin, AuthRequireMixin, DeleteView):
             messages.error(self.request, _('You cannot delete status with tasks'))
             return redirect(self.success_url)
 
-        messages.success(self.request, self.get_success_message())
         return super().post(request, *args, **kwargs)
