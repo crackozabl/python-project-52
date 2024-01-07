@@ -12,7 +12,7 @@ def index(request):
 
 def test_rollbar(request):
     a = None
-    a.hello() # Creating an error with an invalid line of code
+    a.hello()
     return render(request, 'index.html')
 
 
