@@ -40,6 +40,7 @@ ALLOWED_HOSTS = ['webserver', '127.0.0.1']
 
 INSTALLED_APPS = [
     'django_bootstrap5',
+    'django_filters',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

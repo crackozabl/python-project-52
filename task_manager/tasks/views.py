@@ -1,16 +1,44 @@
+import django.forms
 from django.forms.models import BaseModelForm
 from django.http import HttpResponse
 from django.views.generic import ListView, CreateView, UpdateView, DeleteView, DetailView
 from task_manager.tasks.models import Task
-from django.utils.translation import gettext as _
+from django.utils.translation import gettext_lazy as _
 from django.contrib.messages.views import SuccessMessageMixin
+from django_filters.views import FilterView
+from django_filters import FilterSet
+from django_filters.filters import BooleanFilter, ModelChoiceFilter
+from task_manager.labels.models import Label
 
-# Create your views here.
+
+class TaskFilter(FilterSet):
+    self_tasks = BooleanFilter(
+        widget=django.forms.CheckboxInput,
+        field_name='author',
+        method='filter_self_tasks',
+        label=_('Only their own tasks'),
+    )
+
+    label = ModelChoiceFilter(
+        queryset=Label.objects.all(),
+        field_name='labels',
+        label=_('Label'),
+    )
+
+    def filter_self_tasks(self, queryset, name, value):
+        if value:
+            return queryset.filter(author=self.request.user)
+        return queryset
+
+    class Meta:
+        model = Task
+        fields = ['status', 'assignee', 'label', 'self_tasks']
 
 
-class TaskListView(ListView):
+class TaskListView(FilterView):
     model = Task
     template_name = 'tasks/list.html'
+    filterset_class = TaskFilter
 
 
 class TaskCreateView(SuccessMessageMixin, CreateView):

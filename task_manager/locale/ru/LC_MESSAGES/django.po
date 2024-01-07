@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-07 02:39+0300\n"
+"POT-Creation-Date: 2024-01-07 03:34+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -23,7 +23,7 @@ msgstr ""
 #: task_manager/labels/models.py:7 task_manager/statuses/models.py:7
 #: task_manager/tasks/models.py:9 task_manager/templates/labels/list.html.py:12
 #: task_manager/templates/statuses/list.html.py:12
-#: task_manager/templates/tasks/list.html.py:13
+#: task_manager/templates/tasks/list.html.py:27
 msgid "Name"
 msgstr "Имя"
 
@@ -57,7 +57,7 @@ msgstr "Описание"
 
 #: task_manager/tasks/models.py:13
 #: task_manager/templates/tasks/details.html.py:27
-#: task_manager/templates/tasks/list.html.py:14
+#: task_manager/templates/tasks/list.html.py:28
 msgid "Status"
 msgstr "Статус"
 
@@ -72,15 +72,23 @@ msgstr "Исполнитель"
 msgid "Labels"
 msgstr "Метки"
 
-#: task_manager/tasks/views.py:21
+#: task_manager/tasks/views.py:19
+msgid "Only their own tasks"
+msgstr "Только свои задачи"
+
+#: task_manager/tasks/views.py:25
+msgid "Label"
+msgstr "Метка"
+
+#: task_manager/tasks/views.py:49
 msgid "Task created successfully"
 msgstr "Задача успешно создана"
 
-#: task_manager/tasks/views.py:38
+#: task_manager/tasks/views.py:66
 msgid "Task updated successfully"
 msgstr "Задача успешно изменена"
 
-#: task_manager/tasks/views.py:45
+#: task_manager/tasks/views.py:73
 msgid "Task deleted successfully"
 msgstr "Задача успешно удалена"
 
@@ -123,7 +131,7 @@ msgstr "Удалить метку"
 
 #: task_manager/templates/labels/list.html.py:11
 #: task_manager/templates/statuses/list.html.py:11
-#: task_manager/templates/tasks/list.html.py:12
+#: task_manager/templates/tasks/list.html.py:26
 #: task_manager/templates/users/list.html.py:11
 msgid "ID"
 msgstr "ID"
@@ -131,7 +139,7 @@ msgstr "ID"
 #: task_manager/templates/labels/list.html.py:13
 #: task_manager/templates/statuses/list.html.py:13
 #: task_manager/templates/tasks/details.html.py:31
-#: task_manager/templates/tasks/list.html.py:17
+#: task_manager/templates/tasks/list.html.py:31
 #: task_manager/templates/users/list.html.py:14
 msgid "Created at"
 msgstr "Дата создания"
@@ -141,7 +149,7 @@ msgstr "Дата создания"
 #: task_manager/templates/statuses/list.html.py:24
 #: task_manager/templates/statuses/update.html.py:13
 #: task_manager/templates/tasks/details.html.py:44
-#: task_manager/templates/tasks/list.html.py:31
+#: task_manager/templates/tasks/list.html.py:45
 #: task_manager/templates/tasks/update.html.py:14
 #: task_manager/templates/users/list.html.py:26
 #: task_manager/templates/users/update.html.py:13
@@ -151,7 +159,7 @@ msgstr "Изменить"
 #: task_manager/templates/labels/list.html.py:26
 #: task_manager/templates/statuses/list.html.py:26
 #: task_manager/templates/tasks/details.html.py:46
-#: task_manager/templates/tasks/list.html.py:33
+#: task_manager/templates/tasks/list.html.py:47
 #: task_manager/templates/users/list.html.py:28
 msgid "Delete"
 msgstr "Удалить"
@@ -171,7 +179,7 @@ msgid "Statuses"
 msgstr "Статусы"
 
 #: task_manager/templates/layout.html.py:36
-#: task_manager/templates/tasks/list.html.py:4
+#: task_manager/templates/tasks/list.html.py:5
 msgid "Tasks"
 msgstr "Задачи"
 
@@ -206,7 +214,7 @@ msgid "Update status"
 msgstr "Изменить статус"
 
 #: task_manager/templates/tasks/create.html.py:6
-#: task_manager/templates/tasks/list.html.py:8
+#: task_manager/templates/tasks/list.html.py:9
 msgid "Create task"
 msgstr "Создать задачу"
 
@@ -219,11 +227,15 @@ msgid "View task"
 msgstr "Просмотр задачи"
 
 #: task_manager/templates/tasks/details.html.py:19
-#: task_manager/templates/tasks/list.html.py:15
+#: task_manager/templates/tasks/list.html.py:29
 msgid "Author"
 msgstr "Автор"
 
-#: task_manager/templates/tasks/list.html.py:16
+#: task_manager/templates/tasks/list.html.py:18
+msgid "Show"
+msgstr "Показать"
+
+#: task_manager/templates/tasks/list.html.py:30
 msgid "Executor"
 msgstr "Исполнитель"
 
