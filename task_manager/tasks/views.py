@@ -1,7 +1,7 @@
 import django.forms
 from django.forms.models import BaseModelForm
 from django.http import HttpResponse
-from django.views.generic import ListView, CreateView, UpdateView, DeleteView, DetailView
+from django.views.generic import CreateView, UpdateView, DeleteView, DetailView
 from task_manager.tasks.models import Task
 from django.utils.translation import gettext_lazy as _
 from django.contrib.messages.views import SuccessMessageMixin
