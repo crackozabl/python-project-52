@@ -33,7 +33,7 @@ class TaskFilter(FilterSet):
 
     class Meta:
         model = Task
-        fields = ['status', 'assignee', 'label', 'self_tasks']
+        fields = ['status', 'executor', 'label', 'self_tasks']
 
 
 class TaskListView(AuthRequireMixin, FilterView):
@@ -46,7 +46,7 @@ class TaskCreateView(AuthRequireMixin, SuccessMessageMixin, CreateView):
     model = Task
     template_name = 'tasks/create.html'
     success_url = '/tasks/'
-    fields = ('name', 'description', 'status', 'assignee', 'labels')
+    fields = ('name', 'description', 'status', 'executor', 'labels')
     success_message = _('Task created successfully')
 
     def form_valid(self, form: BaseModelForm) -> HttpResponse:
@@ -63,7 +63,7 @@ class TaskUpdateView(AuthRequireMixin, SuccessMessageMixin, UpdateView):
     model = Task
     template_name = 'tasks/update.html'
     success_url = '/tasks/'
-    fields = ('name', 'description', 'status', 'assignee', 'labels')
+    fields = ('name', 'description', 'status', 'executor', 'labels')
     success_message = _('Task updated successfully')
 
 
