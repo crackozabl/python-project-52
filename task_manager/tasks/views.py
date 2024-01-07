@@ -9,6 +9,7 @@ from django_filters.views import FilterView
 from django_filters import FilterSet
 from django_filters.filters import BooleanFilter, ModelChoiceFilter
 from task_manager.labels.models import Label
+from task_manager.mixins import AuthRequireMixin
 
 
 class TaskFilter(FilterSet):
@@ -35,13 +36,13 @@ class TaskFilter(FilterSet):
         fields = ['status', 'assignee', 'label', 'self_tasks']
 
 
-class TaskListView(FilterView):
+class TaskListView(AuthRequireMixin, FilterView):
     model = Task
     template_name = 'tasks/list.html'
     filterset_class = TaskFilter
 
 
-class TaskCreateView(SuccessMessageMixin, CreateView):
+class TaskCreateView(AuthRequireMixin, SuccessMessageMixin, CreateView):
     model = Task
     template_name = 'tasks/create.html'
     success_url = '/tasks/'
@@ -53,12 +54,12 @@ class TaskCreateView(SuccessMessageMixin, CreateView):
         return super().form_valid(form)
 
 
-class TaskDetailsView(DetailView):
+class TaskDetailsView(AuthRequireMixin, DetailView):
     model = Task
     template_name = 'tasks/details.html'
 
 
-class TaskUpdateView(SuccessMessageMixin, UpdateView):
+class TaskUpdateView(AuthRequireMixin, SuccessMessageMixin, UpdateView):
     model = Task
     template_name = 'tasks/update.html'
     success_url = '/tasks/'
@@ -66,7 +67,7 @@ class TaskUpdateView(SuccessMessageMixin, UpdateView):
     success_message = _('Task updated successfully')
 
 
-class TaskDeleteView(SuccessMessageMixin, DeleteView):
+class TaskDeleteView(AuthRequireMixin, SuccessMessageMixin, DeleteView):
     model = Task
     template_name = 'tasks/delete.html'
     success_url = '/tasks/'

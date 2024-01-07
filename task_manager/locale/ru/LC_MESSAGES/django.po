@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-07 03:34+0300\n"
+"POT-Creation-Date: 2024-01-07 04:59+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -38,6 +38,12 @@ msgstr "Метка успешно изменена"
 #: task_manager/labels/views.py:32
 msgid "Label deleted successfully"
 msgstr "Метка успешно удалена"
+
+#: task_manager/mixins.py:9
+#, fuzzy
+#| msgid "You are logged in."
+msgid "You are not logged in! Please sign in."
+msgstr "Вы залогинены"
 
 #: task_manager/statuses/views.py:19
 msgid "Status created successfully"
@@ -72,23 +78,23 @@ msgstr "Исполнитель"
 msgid "Labels"
 msgstr "Метки"
 
-#: task_manager/tasks/views.py:19
+#: task_manager/tasks/views.py:20
 msgid "Only their own tasks"
 msgstr "Только свои задачи"
 
-#: task_manager/tasks/views.py:25
+#: task_manager/tasks/views.py:26
 msgid "Label"
 msgstr "Метка"
 
-#: task_manager/tasks/views.py:49
+#: task_manager/tasks/views.py:50
 msgid "Task created successfully"
 msgstr "Задача успешно создана"
 
-#: task_manager/tasks/views.py:66
+#: task_manager/tasks/views.py:67
 msgid "Task updated successfully"
 msgstr "Задача успешно изменена"
 
-#: task_manager/tasks/views.py:73
+#: task_manager/tasks/views.py:74
 msgid "Task deleted successfully"
 msgstr "Задача успешно удалена"
 
