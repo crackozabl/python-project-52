@@ -3,6 +3,8 @@ from django.utils.translation import gettext_lazy as _
 from django.contrib.messages.views import SuccessMessageMixin
 from task_manager.labels.models import Label
 from task_manager.mixins import AuthRequireMixin
+from django.contrib import messages
+from django.shortcuts import redirect
 
 
 class LabelListView(AuthRequireMixin, ListView):
@@ -31,3 +33,11 @@ class LabelDeleteView(SuccessMessageMixin, AuthRequireMixin, DeleteView):
     template_name = 'labels/delete.html'
     success_url = '/labels/'
     success_message = _('Label deleted successfully')
+
+    def post(self, request, *args, **kwargs):
+        if self.get_object().labels.exists():
+            messages.error(self.request, _('You cannot delete label with tasks'))
+            return redirect(self.success_url)
+
+        messages.success(self.request, self.get_success_message())
+        return super().post(request, *args, **kwargs)

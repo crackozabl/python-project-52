@@ -4,12 +4,32 @@ from django.http import HttpResponse
 from django.views.generic import CreateView, UpdateView, DeleteView, DetailView
 from task_manager.tasks.models import Task
 from django.utils.translation import gettext_lazy as _
+from django.urls import reverse_lazy
 from django.contrib.messages.views import SuccessMessageMixin
 from django_filters.views import FilterView
 from django_filters import FilterSet
 from django_filters.filters import BooleanFilter, ModelChoiceFilter
 from task_manager.labels.models import Label
 from task_manager.mixins import AuthRequireMixin
+from django.contrib.auth.mixins import UserPassesTestMixin
+from django.contrib import messages
+from django.shortcuts import redirect
+
+
+class TaskAuthorTestMixin(UserPassesTestMixin):
+    def test_func(self):
+        if self.request.user != self.get_object().author:
+            self.raise_exception = False
+            self.permission_denied_message = \
+                ('You cannot delete non-your task!')
+
+            return False
+        else:
+            return True
+
+    def handle_no_permission(self):
+        messages.error(self.request, self.get_permission_denied_message())
+        return redirect(reverse_lazy('tasks:list'))
 
 
 class TaskFilter(FilterSet):
@@ -67,7 +87,7 @@ class TaskUpdateView(AuthRequireMixin, SuccessMessageMixin, UpdateView):
     success_message = _('Task updated successfully')
 
 
-class TaskDeleteView(AuthRequireMixin, SuccessMessageMixin, DeleteView):
+class TaskDeleteView(AuthRequireMixin, SuccessMessageMixin, TaskAuthorTestMixin, DeleteView):
     model = Task
     template_name = 'tasks/delete.html'
     success_url = '/tasks/'
