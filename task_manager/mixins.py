@@ -11,5 +11,5 @@ class AuthRequireMixin(LoginRequiredMixin):
         # self.permission_denied_url = reverse_lazy('login')
         self.login_url = reverse_lazy('login')
         self.redirect_field_name = ''
-        print(reverse_lazy('login'))
+        # print(reverse_lazy('login'))
         return super().dispatch(request, *args, **kwargs)
