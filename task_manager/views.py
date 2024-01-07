@@ -10,6 +10,12 @@ def index(request):
     return render(request, 'index.html')
 
 
+def test_rollbar(request):
+    a = None
+    a.hello() # Creating an error with an invalid line of code
+    return render(request, 'index.html')
+
+
 class IndexView(TemplateView):
     template_name = 'index.html'
 
