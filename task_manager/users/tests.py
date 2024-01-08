@@ -41,10 +41,14 @@ class UsersTestCase(TestCase):
         self.assertContains(reg_res, 'Пользователь успешно зарегистрирован')
 
     def test_user_delete(self):
-        res = self.client.get(reverse('users:delete', kwargs={'pk': self.user_test().pk}), follow=True)
+        res = self.client.get(
+            reverse('users:delete', kwargs={'pk': self.user_test().pk}), follow=True)
+
         self.assertEqual(200, res.status_code)
 
-        res_delete = self.client.post(reverse('users:delete', kwargs={'pk': self.user_test().pk}), follow=True)
+        res_delete = self.client.post(
+            reverse('users:delete', kwargs={'pk': self.user_test().pk}), follow=True)
+
         self.assertEqual(200, res_delete.status_code)
         # print(res_delete.content.decode('utf-8'))
         self.assertContains(res_delete, "You cannot change not yourself! Please sign in.")
