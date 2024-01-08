@@ -17,3 +17,8 @@ start:
 
 lint:
 	poetry run flake8 .
+
+test:
+	coverage run --source="./task_manager" manage.py test
+	coverage html
+
